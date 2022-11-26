@@ -11,31 +11,28 @@ class SplashScreen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => _SplashScreenState();
-  
 }
 
 class _SplashScreenState extends State<SplashScreen> with AfterLayoutMixin {
-
   @override
-  FutureOr<void> afterFirstLayout(BuildContext context) => checkFirstSeen(context);
+  FutureOr<void> afterFirstLayout(BuildContext context) =>
+      checkFirstSeen(Navigator.of(context));
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Siema");
+    return const Text("Loading...");
   }
 
-
-  Future checkFirstSeen(BuildContext context) async {
+  Future checkFirstSeen(NavigatorState navigator) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     bool seen = sharedPreferences.getBool("seen") ?? false;
 
     if (seen) {
-      Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
-    }
-    else {
-     await sharedPreferences.setBool("seen", true);
-      Navigator.of(context).pushReplacementNamed(InfoScreen.routeName);
+      navigator.pushReplacementNamed(HomeScreen.routeName);
+    } else {
+      await sharedPreferences.setBool("seen", true);
+      navigator.pushReplacementNamed(InfoScreen.routeName);
     }
   }
 }
