@@ -10,23 +10,18 @@ class RoomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(8),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(room.name),
-            IconButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pushNamed(RoomScreen.routeName, arguments: room);
-              },
-              icon: const Icon(Icons.add),
-              tooltip: "dodaj zadanie",
-            )
-          ],
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Theme.of(context).colorScheme.primary),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 6),
+      child: ListTile(
+        title: Text(room.name),
+        trailing: IconButton(
+          onPressed: () {
+            Navigator.of(context)
+                .pushNamed(RoomScreen.routeName, arguments: room);
+          },
+          icon: const Icon(Icons.add),
+          tooltip: "dodaj zadanie",
         ),
       ),
     );

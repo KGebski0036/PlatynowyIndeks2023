@@ -17,6 +17,16 @@ dependencies:
   shared_preferences: ^2.0.15
   google_fonts: ^3.0.1
   provider: ^6.0.4
+  flutter_native_splash: ^2.2.16
+  flutter_launcher_icons: ^0.11.0
+
+flutter_native_splash:
+  color: "#fd95e6"
+  image: "assets/logo.png"
+
+flutter_icons:
+  android: true
+  image_path: "assets/icon.png"
 
 dev_dependencies:
   flutter_test:

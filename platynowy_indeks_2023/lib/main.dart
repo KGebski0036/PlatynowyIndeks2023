@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             secondary: Color.fromARGB(255, 74, 121, 204),
             onSecondary: Color.fromARGB(255, 168, 200, 255),
             surface: Color.fromARGB(255, 77, 59, 128),
-            onSurface: Color.fromARGB(255, 222, 209, 252),
+            onSurface: Color.fromARGB(255, 255, 255, 255),
           ),
         ),
         routes: {
