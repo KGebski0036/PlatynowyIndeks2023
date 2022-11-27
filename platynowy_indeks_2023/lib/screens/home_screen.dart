@@ -4,7 +4,7 @@ import 'package:platynowy_indeks_2023/dummyData/dumy_data.dart';
 import 'package:platynowy_indeks_2023/widges/room_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  static String routeName = "/main";
+  static const String routeName = "/main";
 
   const HomeScreen({super.key});
 

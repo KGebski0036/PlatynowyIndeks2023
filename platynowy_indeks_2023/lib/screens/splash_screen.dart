@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Loading...");
+    return const Scaffold(body: Center(child: Text("Loading...")));
   }
 
   Future checkFirstSeen(NavigatorState navigator) async {
@@ -31,8 +31,8 @@ class _SplashScreenState extends State<SplashScreen> with AfterLayoutMixin {
     if (seen) {
       navigator.pushReplacementNamed(HomeScreen.routeName);
     } else {
-      await sharedPreferences.setBool("seen", true);
-      navigator.pushReplacementNamed(InfoScreen.routeName);
+    await sharedPreferences.setBool("seen", true);
+    navigator.pushReplacementNamed(InfoScreen.routeName);
     }
   }
 }
